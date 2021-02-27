@@ -63,6 +63,6 @@ Discord Functions;
 - **ADiscord.send**
 
 Logger Functions;
-- **ALogger.warning.sendLog** (yellow)
-- **ALogger.log.sendLog** (green)
-- **ALogger.error.sendLog** (red)
+- **ALogger.warning** (yellow)
+- **ALogger.log** (green)
+- **ALogger.error** (red)
