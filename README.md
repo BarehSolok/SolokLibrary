@@ -55,6 +55,18 @@ Player Fuctions;
 - *virus* (get)
 - *water* (get/set)
 - *arrested* (get)
+- *ban*
+- *spy*
+
+Server Functions;
+- serverName
+- serverIp
+- serverPassword
+- serverMap
+- serverPort
+- serverId
+- serverPlayerCount
+- serverPlayerMaxPlayers
 
 Events;
 - *Coming Soon..*
