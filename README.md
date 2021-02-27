@@ -62,7 +62,7 @@ Events;
 Discord Functions;
 - **ADiscord.send**
 
-Logger Functions;
+Logger Funcs;
 - **ALogger.warning** (yellow)
 - **ALogger.log** (green)
 - **ALogger.error** (red)
