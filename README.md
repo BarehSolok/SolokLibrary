@@ -12,51 +12,51 @@ Thirdly, use functions like this;
 ![Screenshot_2](https://user-images.githubusercontent.com/76036578/109367573-77d12980-78a7-11eb-9492-a012008f4072.png)
 
 Player Fuctions;
-- *Convert* (IMPORTANT)
-- *AddGroup*
-- *ArrestPlayer*
-- *BrowserRequest*
-- *Damage*
-- *HasGroup*
-- *HasPermission*
-- *Heal*
-- *Kick*
-- *Kill*
-- *MaxSkills*
-- *Release (Arrest Stop)*
-- *RemoveFromVehicle*
-- *RemoveGroup*
-- *SetMarker*
-- *Sudo*
-- *Teleport*
-- *lookPlayer*
-- *lookBarricade*
-- *lookStructure*
-- *bleeding* (get/set)
-- *broken* (get/set)
-- *experience* (get/set)
-- *food* (get/set)
-- *god* (get/set)
-- *gravity* (set)
-- *health* (get)
-- *inVehicle* (get)
-- *id* (string)
-- *isAdmin* (get)
-- *jumpHeight* (set)
-- *marker* (getPosition)
-- *name* (get)
-- *position* (get)
-- *radioFrequency* (get)
-- *sendRadioFrequency* (set)
-- *reputation* (get/set)
-- *speed* (get)
-- *sendSpeed* (set)
-- *vanish* (get/set)
-- *virus* (get)
-- *water* (get/set)
-- *arrested* (get)
-- *ban*
-- *spy*
+- Convert (IMPORTANT)
+- AddGroup
+- ArrestPlayer
+- BrowserRequest
+- Damage
+- HasGroup
+- HasPermission
+- Heal
+- Kick
+- Kill
+- MaxSkills
+- Release (Arrest Stop)
+- RemoveFromVehicle
+- RemoveGroup
+- SetMarker
+- Sudo
+- Teleport
+- lookPlayer
+- lookBarricade
+- lookStructure
+- bleeding (get/set)
+- broken (get/set)
+- experience (get/set)
+- food (get/set)
+- god (get/set)
+- gravity (set)
+- health (get)
+- inVehicle (get)
+- id (string)
+- isAdmin (get)
+- jumpHeight (set)
+- marker (getPosition)
+- name (get)
+- position (get)
+- radioFrequency (get)
+- sendRadioFrequency (set)
+- reputation (get/set)
+- speed (get)
+- sendSpeed (set)
+- vanish (get/set)
+- virus (get)
+- water (get/set)
+- arrested (get)
+- ban
+- spy
 
 Server Functions;
 - serverName
@@ -75,6 +75,6 @@ Discord Functions;
 - **ADiscord.send**
 
 Logger Funcs;
-- **ALogger.warning** (yellow)
-- **ALogger.log** (green)
-- **ALogger.error** (red)
+- ALogger.warning (yellow)
+- ALogger.log (green)
+- ALogger.error (red)
