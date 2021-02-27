@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using Rocket.API;
 using Rocket.Core;
@@ -8,6 +8,9 @@ using AtomicLibrary.Player;
 using System.IO;
 using AtomicLibrary.Discord;
 using AtomicLibrary.Logger;
+using Rocket.Unturned.Player;
+using SDG.Unturned;
+using Steamworks;
 
 namespace AtomicLibrary
 {
@@ -43,6 +46,28 @@ namespace AtomicLibrary
 			}
 			else
 				configuration = new XMLFileAsset<RocketPluginConfiguration>(text, null, default(RocketPluginConfiguration));
+		}
+
+		public static uint serverIP() => Provider.ip;
+		public static string serverMap() => Provider.map;
+		public static int serverPlayerCount() => Provider.clients.Count;
+		public static int serverPlayerMaxPlayers() => Provider.clients.Capacity;
+		public static string serverPassword() => Provider.serverPassword;
+		public static string serverName() => Provider.serverName;
+		public static string serverID() => Provider.serverID;
+		public static ushort serverPort() => Provider.port;
+
+		public static void ban(CSteamID steamID, string reason, uint duration)
+		{
+			foreach (SteamPlayer steamPlayer in Provider.clients)
+			{
+				UnturnedPlayer player = UnturnedPlayer.FromSteamPlayer(steamPlayer);
+				if (player.CSteamID == steamID)
+				{
+					player.Ban(reason, duration);
+					return;
+				}
+			}
 		}
 
 		private IAsset<RocketPluginConfiguration> configuration;
