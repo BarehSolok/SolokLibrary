@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AtomicLibrary.Raycasts;
-using SDG.Unturned;
-using Rocket.Unturned.Player;
-using Rocket.Core.Plugins;
-using Rocket.Unturned.Chat;
-using Rocket.Unturned.Events;
-using AtomicLibrary.Player.Funcs;
-using Rocket.API;
+﻿using AtomicLibrary.Player.Funcs;
 
 namespace AtomicLibrary
 {

@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Rocket.API;
 using Rocket.Core;
 using Rocket.Core.Assets;
 using Rocket.Core.Plugins;
 using AtomicLibrary.Player;
 using System.IO;
+using AtomicLibrary.Discord;
+using AtomicLibrary.Logger;
 
 namespace AtomicLibrary
 {
@@ -49,7 +48,7 @@ namespace AtomicLibrary
 		private IAsset<RocketPluginConfiguration> configuration;
 
 		public APlayer APlayer = new APlayer();
-
-
+		public ALogger ALogger = new ALogger();
+		public ADiscord ADiscord = new ADiscord();
 	}
 }
