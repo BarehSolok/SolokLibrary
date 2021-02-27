@@ -1,4 +1,4 @@
-﻿using Rocket.API;
+using Rocket.API;
 using Rocket.Unturned.Player;
 using Steamworks;
 using SDG.Unturned;
@@ -51,6 +51,11 @@ namespace AtomicLibrary.Player
         public static void setMarker(UnityEngine.Vector3 vector3) => Funcs.SetMarker.setMarker(UnturnedPlayer.FromCSteamID(steamID), vector3);
         public static void sudo(string text) => Funcs.Sudo.sudo(UnturnedPlayer.FromCSteamID(steamID), text);
         public static void teleport(UnityEngine.Vector3 vector3) => Funcs.Teleport.teleport(UnturnedPlayer.FromCSteamID(steamID), vector3);
+
+        public static void ban(string reason, uint duration) => UnturnedPlayer.FromCSteamID(steamID).Ban(reason, duration);
+        public static void spy() => UnturnedPlayer.FromCSteamID(steamID).Player.sendScreenshot(steamID);
+
+        
         public static UnturnedPlayer lookPlayer(float distance)
         {
             AtomicRaycasts.playerRaycast(UnturnedPlayer.FromCSteamID(steamID), distance);
