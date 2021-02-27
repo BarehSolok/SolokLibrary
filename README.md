@@ -28,6 +28,9 @@ Player Fuctions;
 *SetMarker*,
 *Sudo*,
 *Teleport*,
+*lookPlayer*,
+*lookBarricade*,
+*lookStructure*
 
 Events;
 *Coming Soon..*
