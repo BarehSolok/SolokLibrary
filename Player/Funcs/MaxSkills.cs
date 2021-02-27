@@ -4,6 +4,6 @@ namespace AtomicLibrary.Player.Funcs
 {
     public class MaxSkills
     {
-        public void maxSkills(UnturnedPlayer player) => player.MaxSkills();
+        public static void maxSkills(UnturnedPlayer player) => player.MaxSkills();
     }
 }

@@ -5,6 +5,6 @@ namespace AtomicLibrary.Player.Funcs
 {
     public class Teleport
     {
-        public void teleport(UnturnedPlayer player, Vector3 vector3) => player.Player.sendTeleport(vector3, 1);
+        public static void teleport(UnturnedPlayer player, Vector3 vector3) => player.Player.sendTeleport(vector3, 1);
     }
 }

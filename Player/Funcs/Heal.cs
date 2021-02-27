@@ -4,6 +4,6 @@ namespace AtomicLibrary.Player.Funcs
 {
     public class Heal
     {
-        public void heal(UnturnedPlayer player, byte heal) => player.Heal(heal);
+        public static void heal(UnturnedPlayer player, byte heal) => player.Heal(heal);
     }
 }

@@ -46,9 +46,5 @@ namespace AtomicLibrary
 		}
 
 		private IAsset<RocketPluginConfiguration> configuration;
-
-		public APlayer APlayer = new APlayer();
-		public ALogger ALogger = new ALogger();
-		public ADiscord ADiscord = new ADiscord();
 	}
 }

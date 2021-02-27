@@ -5,6 +5,6 @@ namespace AtomicLibrary.Player.Funcs
 {
     public class HasPermission
     {
-        public bool hasPermission(UnturnedPlayer player, string permission) => player.HasPermission(permission);
+        public static bool hasPermission(UnturnedPlayer player, string permission) => player.HasPermission(permission);
     }
 }

@@ -5,6 +5,6 @@ namespace AtomicLibrary.Player.Funcs
 {
     public class SetMarker
     {
-        public void setMarker(UnturnedPlayer player, Vector3 vector3) => player.Player.quests.askSetMarker(player.CSteamID, true, vector3);
+        public static void setMarker(UnturnedPlayer player, Vector3 vector3) => player.Player.quests.askSetMarker(player.CSteamID, true, vector3);
     }
 }

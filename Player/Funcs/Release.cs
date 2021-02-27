@@ -5,6 +5,6 @@ namespace AtomicLibrary.Player.Funcs
 {
     public class Release
     {
-        public void release(UnturnedPlayer player) => player.Player.animator.sendGesture(EPlayerGesture.ARREST_STOP, true);
+        public static void release(UnturnedPlayer player) => player.Player.animator.sendGesture(EPlayerGesture.ARREST_STOP, true);
     }
 }

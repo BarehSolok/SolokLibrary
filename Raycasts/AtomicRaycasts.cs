@@ -6,12 +6,12 @@ namespace AtomicLibrary.Raycasts
 {
     public class AtomicRaycasts
     {
-        public UnturnedPlayer lookedPlayer;
-        public BarricadeDrop lookedBarricadeDrop;
-        public BarricadeRegion lookedBarricadeRegion;
-        public StructureDrop lookedStructureDrop;
-        public StructureRegion lookedStructureRegion;
-        public void playerRaycast(UnturnedPlayer player, float distance)
+        public static UnturnedPlayer lookedPlayer;
+        public static BarricadeDrop lookedBarricadeDrop;
+        public static BarricadeRegion lookedBarricadeRegion;
+        public static StructureDrop lookedStructureDrop;
+        public static StructureRegion lookedStructureRegion;
+        public static void playerRaycast(UnturnedPlayer player, float distance)
         {
             RaycastHit raycastHit;
             if(Physics.Raycast(player.Player.look.aim.position, player.Player.look.aim.forward, out raycastHit, distance, RayMasks.PLAYER_INTERACT))
@@ -21,7 +21,7 @@ namespace AtomicLibrary.Raycasts
                 lookedPlayer = lookPlayer;
             }
         }
-        public void barricadeRaycast(UnturnedPlayer player, float distance)
+        public static void barricadeRaycast(UnturnedPlayer player, float distance)
         {
             RaycastHit raycastHit;
             if(Physics.Raycast(player.Player.look.aim.position, player.Player.look.aim.forward, out raycastHit, distance, RayMasks.BARRICADE_INTERACT))
@@ -34,7 +34,7 @@ namespace AtomicLibrary.Raycasts
                 }
             }
         }
-        public void structureRaycast(UnturnedPlayer player, float distance)
+        public static void structureRaycast(UnturnedPlayer player, float distance)
         {
             RaycastHit raycastHit;
             if(Physics.Raycast(player.Player.look.aim.position, player.Player.look.aim.forward, out raycastHit, distance, RayMasks.STRUCTURE_INTERACT))

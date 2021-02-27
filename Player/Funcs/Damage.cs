@@ -6,7 +6,7 @@ namespace AtomicLibrary.Player.Funcs
 {
     public class Damage
     {
-        public void damage(UnturnedPlayer player, byte amount)
+        public static void damage(UnturnedPlayer player, byte amount)
         {
             Vector3 direction = new Vector3(player.Position.x, player.Position.y);
             player.Damage(amount, direction, EDeathCause.KILL, ELimb.SPINE, player.CSteamID);

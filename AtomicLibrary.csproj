@@ -67,7 +67,6 @@
   <ItemGroup>
     <Compile Include="APlugin.cs" />
     <Compile Include="Discord\ADiscord.cs" />
-    <Compile Include="Functions.cs" />
     <Compile Include="Logger\ALogger.cs" />
     <Compile Include="Player\APlayer.cs" />
     <Compile Include="Player\Funcs\AddGroup.cs" />
@@ -87,7 +86,6 @@
     <Compile Include="Player\Funcs\Sudo.cs" />
     <Compile Include="Player\Funcs\Teleport.cs" />
     <Compile Include="Player\Properties\Arrested.cs" />
-    <Compile Include="Props.cs" />
     <Compile Include="Raycasts\AtomicRaycasts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

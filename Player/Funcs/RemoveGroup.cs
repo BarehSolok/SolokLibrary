@@ -5,6 +5,6 @@ namespace AtomicLibrary.Player.Funcs
 {
     public class RemoveGroup
     {
-        public void removeGroup(UnturnedPlayer player, string groupID) => R.Permissions.RemovePlayerFromGroup(groupID, player);
+        public static void removeGroup(UnturnedPlayer player, string groupID) => R.Permissions.RemovePlayerFromGroup(groupID, player);
     }
 }

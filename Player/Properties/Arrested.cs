@@ -5,7 +5,7 @@ namespace AtomicLibrary.Player.Properties
 {
     public class Arrested
     {
-        public bool arrested(UnturnedPlayer player)
+        public static bool arrested(UnturnedPlayer player)
         {
             if (player.Player.animator.gesture == EPlayerGesture.ARREST_START)
                 return true;

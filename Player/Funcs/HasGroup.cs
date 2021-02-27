@@ -6,6 +6,6 @@ namespace AtomicLibrary.Player.Funcs
 {
     public class HasGroup
     {
-        public bool hasGroup(UnturnedPlayer player, string groupID) => R.Permissions.GetGroups(player, true).Any(group => group.Id == groupID);
+        public static bool hasGroup(UnturnedPlayer player, string groupID) => R.Permissions.GetGroups(player, true).Any(group => group.Id == groupID);
     }
 }

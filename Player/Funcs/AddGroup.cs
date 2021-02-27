@@ -5,6 +5,6 @@ namespace AtomicLibrary.Player.Funcs
 {
     public class AddGroup
     {
-        public void addGroup(UnturnedPlayer player, string groupID) => R.Permissions.AddPlayerToGroup(groupID, player);
+        public static void addGroup(UnturnedPlayer player, string groupID) => R.Permissions.AddPlayerToGroup(groupID, player);
     }
 }

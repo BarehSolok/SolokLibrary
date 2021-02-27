@@ -5,7 +5,7 @@ namespace AtomicLibrary.Player.Funcs
 {
     public class ArrestPlayer
     {
-        public void arrestPlayer(UnturnedPlayer player)
+        public static void arrestPlayer(UnturnedPlayer player)
         {
                 player.Player.animator.tellGesture(player.CSteamID, (byte)EPlayerGesture.ARREST_START);
         }

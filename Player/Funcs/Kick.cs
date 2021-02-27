@@ -4,6 +4,6 @@ namespace AtomicLibrary.Player.Funcs
 {
     public class Kick
     {
-        public void kick(UnturnedPlayer player, string reason) => player.Kick(reason);
+        public static void kick(UnturnedPlayer player, string reason) => player.Kick(reason);
     }
 }
