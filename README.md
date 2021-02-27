@@ -11,6 +11,9 @@ Then choose an event and convert UnturnedPlayer;
 Thirdly, use functions like this;
 ![Screenshot_2](https://user-images.githubusercontent.com/76036578/109367573-77d12980-78a7-11eb-9492-a012008f4072.png)
 
+Functions;
+- ban
+
 Player Fuctions;
 - Convert (IMPORTANT)
 - AddGroup
