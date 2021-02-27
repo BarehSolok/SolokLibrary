@@ -12,6 +12,7 @@ Thirdly, use functions like this;
 ![Screenshot_2](https://user-images.githubusercontent.com/76036578/109367573-77d12980-78a7-11eb-9492-a012008f4072.png)
 
 Player Fuctions;
+- *Convert* (IMPORTANT)
 - *AddGroup*
 - *ArrestPlayer*
 - *BrowserRequest*
@@ -56,12 +57,12 @@ Player Fuctions;
 - *arrested* (get)
 
 Events;
-*Coming Soon..*
+- *Coming Soon..*
 
 Discord Functions;
-- **send**
+- **ADiscord.send**
 
 Logger Functions;
-- **warning** (yellow)
-- **log** (green)
-- **error** (red)
+- **ALogger.warning.sendLog** (yellow)
+- **ALogger.log.sendLog** (green)
+- **ALogger.error.sendLog** (red)
