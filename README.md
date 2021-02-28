@@ -81,3 +81,5 @@ Logger Funcs;
 - ALogger.warning (yellow)
 - ALogger.log (green)
 - ALogger.error (red)
+
+**Detailed documentation**: [Site](https://atomicplugins.github.io/AtomicLibrary/)
