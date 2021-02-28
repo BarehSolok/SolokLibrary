@@ -57,18 +57,7 @@ namespace AtomicLibrary
 		public static string serverID() => Provider.serverID;
 		public static ushort serverPort() => Provider.port;
 
-		public static void ban(CSteamID steamID, string reason, uint duration)
-		{
-			foreach (SteamPlayer steamPlayer in Provider.clients)
-			{
-				UnturnedPlayer player = UnturnedPlayer.FromSteamPlayer(steamPlayer);
-				if (player.CSteamID == steamID)
-				{
-					player.Ban(reason, duration);
-					return;
-				}
-			}
-		}
+		public static void ban(CSteamID steamID, string reason, uint duration) => UnturnedPlayer.FromCSteamID(steamID).Ban(reason, duration);
 
 		private IAsset<RocketPluginConfiguration> configuration;
 	}
