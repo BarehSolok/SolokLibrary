@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="APlugin.cs" />
     <Compile Include="Discord\ADiscord.cs" />
+    <Compile Include="ExampleClass.cs" />
     <Compile Include="Logger\ALogger.cs" />
     <Compile Include="Player\APlayer.cs" />
     <Compile Include="Player\Funcs\AddGroup.cs" />
