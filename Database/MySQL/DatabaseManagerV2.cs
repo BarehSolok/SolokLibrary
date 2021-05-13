@@ -52,7 +52,7 @@ namespace SolokLibrary.Database.MySQL
         private void CreateTableSchema(string createTableQuery)
         {
             ExecuteQuery(EQueryType.NonQuery,
-                $"CREATE TABLE IF NOT EXISTS `{TableName}` {createTableQuery};");
+                $"CREATE TABLE IF NOT EXISTS `{TableName}` ({createTableQuery});");
         }
         public object ExecuteQuery(EQueryType queryType, string query, params MySqlParameter[] parameters)
         {

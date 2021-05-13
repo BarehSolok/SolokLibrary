@@ -19,9 +19,9 @@ namespace SolokLibrary.ExamplePlugin3
             DatabaseName = "unturned";
             DatabaseTableName = "exampleplugin3";
             DatabasePort = 3306;
-            DatabaseCreateTableQuery = "(`SteamID` VARCHAR(32) NOT NULL DEFAULT '0', `CharacterName` VARCHAR(50) NOT NULL DEFAULT 'NoName'," +
+            DatabaseCreateTableQuery = "`SteamID` VARCHAR(32) NOT NULL DEFAULT '0', `CharacterName` VARCHAR(50) NOT NULL DEFAULT 'NoName'," +
                                        " `LastUpdated` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP," +
-                                       " PRIMARY KEY (`SteamID`))";
+                                       " PRIMARY KEY (`SteamID`)";
         }
     }
 }
