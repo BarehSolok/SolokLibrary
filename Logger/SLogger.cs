@@ -1,28 +1,51 @@
 ﻿using System;
+using System.Diagnostics;
+using MySql.Data.MySqlClient;
+using SDG.Unturned;
 
 namespace SolokLibrary.Logger
 {
     public static class SLogger
     {
-        public static void Error(string text)
+        public static void Log(string message, ConsoleColor color = ConsoleColor.Green)
         {
-            Console.WriteLine(text, Console.ForegroundColor = ConsoleColor.Red);
+            if (message == null)
+                return;
+            Console.ForegroundColor = color;
+            Console.WriteLine(message);
             Console.ResetColor();
         }
-        public static void Info(string text)
+        public static void Warning(string message, ConsoleColor color = ConsoleColor.Yellow)
         {
-            Console.WriteLine(text, Console.ForegroundColor = ConsoleColor.Cyan);
+            if (message == null)
+                return;
+            Console.ForegroundColor = color;
+            Console.WriteLine(message);
             Console.ResetColor();
         }
-        public static void Log(string text)
+        public static void Error(string message, ConsoleColor color = ConsoleColor.Red)
         {
-            Console.WriteLine(text, Console.ForegroundColor = ConsoleColor.Green);
+            if (message == null)
+                return;
+            Console.ForegroundColor = color;
+            Console.WriteLine(message);
             Console.ResetColor();
         }
-        public static void Warning(string text)
+        public static void Exception(Exception exception, ConsoleColor color = ConsoleColor.Red)
         {
-            Console.WriteLine(text, Console.ForegroundColor = ConsoleColor.Yellow);
-            Console.ResetColor();
+            if (exception == null)
+                return;
+            string text;
+            switch (exception)
+            {
+                case MySqlException mySqlEx:
+                    text = $"ErrCode: {mySqlEx.Code}; ErrNo: {mySqlEx.Number}; Source: {mySqlEx.Source}; Message: {mySqlEx.Message}; Possible Solution: {mySqlEx.HelpLink};";
+                    break;
+                default:
+                    text = $"Caught exception while logging an exception! Ouch...; {exception.Message}";
+                    break;
+            }
+            Error(text);
         }
     }
 }

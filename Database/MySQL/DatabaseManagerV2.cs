@@ -10,12 +10,12 @@ namespace SolokLibrary.Database.MySQL
 {
     public class DatabaseManagerV2
     {
-        public static string Address;
-        public static string Name;
-        public static string Password;
-        public static uint Port;
-        public static string TableName;
-        public static string Username;
+        public string Address;
+        public string Name;
+        public string Password;
+        public uint Port;
+        public string TableName;
+        public string Username;
         
         // CONSTRUCTOR   
         public DatabaseManagerV2(string address, uint port, string username, string password, string name, string tableName, string createTableQuery)
@@ -32,7 +32,7 @@ namespace SolokLibrary.Database.MySQL
         }
 
         // METHODS
-        private static MySqlConnection CreateConnection()
+        private MySqlConnection CreateConnection()
         {
             MySqlConnection connection = null;
             try
@@ -44,17 +44,17 @@ namespace SolokLibrary.Database.MySQL
             }
             catch (Exception ex)
             {
-                SLogger.Error(ex.Message);
+                SLogger.Exception(ex);
             }
 
             return connection;
         }
-        private static void CreateTableSchema(string createTableQuery)
+        private void CreateTableSchema(string createTableQuery)
         {
             ExecuteQuery(EQueryType.NonQuery,
                 $"CREATE TABLE IF NOT EXISTS `{TableName}` {createTableQuery};");
         }
-        public static object ExecuteQuery(EQueryType queryType, string query, params MySqlParameter[] parameters)
+        public object ExecuteQuery(EQueryType queryType, string query, params MySqlParameter[] parameters)
         {
             object result = null;
             MySqlDataReader reader = null;
@@ -109,7 +109,7 @@ namespace SolokLibrary.Database.MySQL
                 }
                 catch (Exception ex)
                 {
-                    SLogger.Error(ex.Message);
+                    SLogger.Exception(ex);
                 }
                 finally
                 {
@@ -120,26 +120,26 @@ namespace SolokLibrary.Database.MySQL
 
             return result;
         }
-        public static bool DatabaseHaveData(string tableName, string data, string column)
+        public bool IsDataExist(string tableName, string data, string column)
         {
             var scalar = ExecuteQuery(EQueryType.Scalar,
                 $"SELECT * FROM `{tableName}` WHERE {column} = @data;",
                 new MySqlParameter("@data", data));
             return scalar != null;
         }
-        public static void DeleteData(string tableName, string data, string column)
+        public void DeleteData(string tableName, string data, string column)
         {
             ExecuteQuery(EQueryType.NonQuery,
                 $"DELETE FROM `{tableName}` WHERE {column}=@data;", 
                 new MySqlParameter("@data", data));
         }
-        public static void InsertData(string tableName, string data, string column)
+        public void InsertData(string tableName, string data, string column)
         {
             ExecuteQuery(EQueryType.NonQuery,
                 $"INSERT INTO `{tableName}` ({column}) VALUES(@data);", 
                 new MySqlParameter("@data", data));
         }
-        public static void UpdateData(string tableName, string oldData, string data, string column)
+        public void UpdateData(string tableName, string oldData, string data, string column)
         {
             ExecuteQuery(EQueryType.NonQuery,
                 $"UPDATE `{tableName}` SET {oldData}=@newData WHERE {column}=@{oldData};", 

@@ -12,13 +12,12 @@ namespace SolokLibrary.ExamplePlugin3
 {
     public class Main : RocketPlugin<Configuration>
     {
-        internal static DatabaseManagerV2 DB;
+        internal DatabaseManagerV2 DB;
         
         protected override void Load()
         {
-            // Initialize MySQL Database
             InitializeMySqlDatabase();
-                
+            
             // EVENTS
             U.Events.OnPlayerConnected += Events_OnPlayerConnected;
             U.Events.OnPlayerDisconnected += Events_OnPlayerDisconnected;
@@ -32,15 +31,15 @@ namespace SolokLibrary.ExamplePlugin3
             U.Events.OnPlayerDisconnected -= Events_OnPlayerDisconnected;
         }
 
-        private static void Events_OnPlayerDisconnected(Rocket.Unturned.Player.UnturnedPlayer player)
+        private void Events_OnPlayerDisconnected(Rocket.Unturned.Player.UnturnedPlayer player)
         {
             var sPlayer = new SPlayer(player);
-            DatabaseManagerV2.DeleteData("exampleplugin3", sPlayer.ID, "SteamID");
+            DB.DeleteData("exampleplugin3", sPlayer.ID, "SteamID");
         }
-        private static void Events_OnPlayerConnected(Rocket.Unturned.Player.UnturnedPlayer player)
+        private void Events_OnPlayerConnected(Rocket.Unturned.Player.UnturnedPlayer player)
         {
             var sPlayer = new SPlayer(player);
-            DatabaseManagerV2.InsertData("exampleplugin3", sPlayer.ID, "SteamID");
+            DB.InsertData("exampleplugin3", sPlayer.ID, "SteamID");
         }
 
         [RocketCommand("control", "control command", "/control <id>", AllowedCaller.Player)]
@@ -48,7 +47,7 @@ namespace SolokLibrary.ExamplePlugin3
         {
             var id = parameters[0];
             UnturnedChat.Say(caller,
-                DatabaseManagerV2.DatabaseHaveData("exampleplugin3", id, "SteamID")
+                DB.IsDataExist("exampleplugin3", id, "SteamID")
                     ? "MySQL have this steamId"
                     : "MySQL haven't this steamId");
         }
@@ -57,14 +56,14 @@ namespace SolokLibrary.ExamplePlugin3
         {
             try
             {
-                DB = new DatabaseManagerV2(Configuration.Instance.DatabaseAddress, Configuration.Instance.DatabasePort, 
-                    Configuration.Instance.DatabaseUsername, Configuration.Instance.DatabasePassword, 
-                    Configuration.Instance.DatabaseName, Configuration.Instance.DatabaseTableName, 
+                DB = new DatabaseManagerV2(Configuration.Instance.DatabaseAddress, Configuration.Instance.DatabasePort,
+                    Configuration.Instance.DatabaseUsername, Configuration.Instance.DatabasePassword,
+                    Configuration.Instance.DatabaseName, Configuration.Instance.DatabaseTableName,
                     Configuration.Instance.DatabaseCreateTableQuery);
             }
             catch (Exception ex)
             {
-                SLogger.Error(ex.Message);
+                SLogger.Exception(ex);
                 Unload();
             }
         }

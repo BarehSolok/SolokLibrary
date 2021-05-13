@@ -15,7 +15,7 @@ namespace SolokLibrary.Server.Classes
         }
 
         // METHODS
-        public static void ClearAllUI() => UIFunction.ClearAllUi();
-        public static void ClearAllUI(ushort uiId) => UIFunction.ClearAllUi(uiId);
+        public void ClearAllUI() => UIFunction.ClearAllUi();
+        public void ClearAllUI(ushort uiId) => UIFunction.ClearAllUi(uiId);
     }
 }

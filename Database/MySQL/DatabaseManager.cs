@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using I18N.West;
 using MySql.Data.MySqlClient;
+using SolokLibrary.Logger;
 
 namespace SolokLibrary.Database.MySQL
 {
@@ -21,11 +20,11 @@ namespace SolokLibrary.Database.MySQL
             {
                 _con.Open();
                 if (_con.State == ConnectionState.Open)
-                    Logger.SLogger.Log(logMessage);
+                    SLogger.Log(logMessage);
             }
             catch (MySqlException exceptionMessage)
             {
-                Console.WriteLine(exceptionMessage);
+                SLogger.Exception(exceptionMessage);
             }
         }
 
@@ -47,7 +46,7 @@ namespace SolokLibrary.Database.MySQL
             }
             catch (MySqlException exceptionMessage)
             {
-                Console.WriteLine(exceptionMessage);
+                SLogger.Exception(exceptionMessage);
                 return false;
             }
         }
@@ -65,7 +64,7 @@ namespace SolokLibrary.Database.MySQL
             }
             catch (MySqlException exceptionMessage)
             {
-                Console.WriteLine(exceptionMessage);
+                SLogger.Exception(exceptionMessage);
             }
         }
         public static void InsertData(string tableName, string data, string column)
@@ -79,7 +78,7 @@ namespace SolokLibrary.Database.MySQL
             }
             catch (MySqlException exceptionMessage)
             {
-                Console.WriteLine(exceptionMessage);
+                SLogger.Exception(exceptionMessage);
             }
         }
         public static void UpdateData(string tableName, string oldData, string column, string newData)
@@ -95,7 +94,7 @@ namespace SolokLibrary.Database.MySQL
             }
             catch (MySqlException exceptionMessage)
             {
-                Console.WriteLine(exceptionMessage);
+                SLogger.Exception(exceptionMessage);
             }
         }
     }

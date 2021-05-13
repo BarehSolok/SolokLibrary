@@ -16,7 +16,7 @@ namespace SolokLibrary.Server.Classes
         }
         
         // METHODS
-        public static void LockVehicle(InteractableVehicle vehicle, CSteamID owner, CSteamID group) => VehicleFunction.LockVehicle(vehicle, owner, group);
-        public static void UnlockVehicle(InteractableVehicle vehicle) => VehicleFunction.UnlockVehicle(vehicle);
+        public void LockVehicle(InteractableVehicle vehicle, CSteamID owner, CSteamID group) => VehicleFunction.LockVehicle(vehicle, owner, group);
+        public void UnlockVehicle(InteractableVehicle vehicle) => VehicleFunction.UnlockVehicle(vehicle);
     }
 }

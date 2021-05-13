@@ -5,6 +5,7 @@ using Rocket.Unturned;
 using Rocket.Unturned.Chat;
 using SolokLibrary.Database.MySQL;
 using SolokLibrary.ExamplePlugin1;
+using SolokLibrary.Logger;
 using SolokLibrary.Player;
 
 namespace SolokLibrary.ExamplePlugin2
@@ -13,6 +14,7 @@ namespace SolokLibrary.ExamplePlugin2
     {
         protected override void Load()
         {
+            
             U.Events.OnPlayerConnected += Events_OnPlayerConnected;
             U.Events.OnPlayerDisconnected += Events_OnPlayerDisconnected;
         }
